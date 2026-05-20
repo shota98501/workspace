@@ -1,0 +1,9 @@
+--View all customers
+
+--Products more expensive than 5000
+
+--All completed orders
+
+--Show each order with customer name
+
+--Total sales per order

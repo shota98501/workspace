@@ -1,0 +1,4 @@
+CREATE TABLE customers(
+    customer_id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY
+    
+)
