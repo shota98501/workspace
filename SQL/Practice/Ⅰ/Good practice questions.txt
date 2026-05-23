@@ -1,0 +1,23 @@
+--Beginner
+--List all products and prices.
+--Find customers in Tokyo.
+--Show orders after 2025-04-04.
+--Sort products by price from highest to lowest.
+--Count total number of customers.
+
+--Intermediate
+--Show all orders with customer names.
+--Show all products with their category names.
+--Calculate total sales for each order.
+--Find total revenue by product.
+--Find total revenue by category.
+--Find customers who have placed at least one order.
+--Find customers who have never placed an order.
+
+--Advanced
+--Find the top 3 customers by total spending.
+--Find the best-selling product by quantity.
+--Find monthly revenue.
+--Find average order value.
+--Rank products by total sales.
+--Show each customer’s most recent order date.
