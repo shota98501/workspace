@@ -57,11 +57,71 @@ ORDER BY total_sales DESC;
 
 --Intermediate
 --Show all orders with customer names.
+SELECT
+o.order_id,
+o.order_date,
+c.first_name,
+c.last_name
+from practice.orders o
+JOIN practice.customers c
+ON o.customer_id = c.customer_id;
+
 --Show all products with their category names.
+SELECT
+p.product_id,
+c.category_name,
+p.price
+FROM practice.products p
+JOIN practice.categories c
+ON p.category_id = c.category_id
+ORDER BY price DESC;
+
 --Calculate total sales for each order.
+SELECT
+o.order_id,
+o.status,
+SUM(oi.quantity * unit_price) AS total_sales
+FROM practice.orders o
+JOIN practice.order_items oi
+ON o.order_id = oi.order_id
+WHERE status = 'completed'
+GROUP BY o.order_id, o.status
+ORDER BY total_sales DESC;
+
 --Find total revenue by product.
+SELECT
+p.product_id,
+p.product_name,
+SUM(oi.quantity * oi.unit_price) AS total_revenue
+FROM practice.products p
+JOIN practice.order_items oi
+ON p.product_id = oi.product_id
+GROUP BY p.product_id,p.product_name
+ORDER BY total_revenue DESC;
+
 --Find total revenue by category.
+SELECT
+c.category_id,
+c.category_name,
+SUM(oi.quantity * oi.unit_price) total_revenue
+FROM practice.categories c
+JOIN practice.products p
+ON c.category_id = p.category_id
+JOIN practice.order_items oi
+ON p.product_id = oi.product_id
+GROUP BY c.category_id,c.category_name
+ORDER BY total_revenue DESC;
+
 --Find customers who have placed at least one order.
+SELECT
+DISTINCT
+c.first_name,
+c.last_name,
+o.order_date
+FROM practice.customers c
+JOIN practice.orders o
+ON c.customer_id = o.order_id;
+
 --Find customers who have never placed an order.
 
 --Advanced
