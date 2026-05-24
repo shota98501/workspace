@@ -134,27 +134,83 @@ WHERE o.order_date IS NULL;
 
 --Advanced
 --Find the top 3 customers by total spending.
+SELECT
+c.customer_id,
+c.first_name,
+c.last_name,
+SUM(oi.quantity * oi.unit_price) AS total_spending
+FROM practice.customers c
+JOIN practice.orders o
+ON c.customer_id = o.customer_id
+JOIN practice.order_items oi
+ON o.order_id = oi.order_id
+GROUP BY c.customer_id,c.first_name,c.last_name
+ORDER BY total_spending DESC
+LIMIT 3;
+
 --Find the best-selling product by quantity.
+SELECT
+p.product_id,
+p.product_name,
+SUM(oi.quantity) AS total_quantity,
+o.status
+FROM practice.products p
+JOIN practice.order_items oi
+ON p.product_id = oi.product_id
+JOIN orders o
+ON o.order_id = oi.order_id
+WHERE o.status = 'completed'
+GROUP BY p.product_id,p.product_name,o.status
+ORDER BY total_quantity DESC;
+
 --Find monthly revenue.
+SELECT
+DATE_TRUNC('month', o.order_date) AS MONTH,
+SUM(oi.quantity * oi.unit_price) AS total_revenue
+FROM practice.orders o
+JOIN practice.order_items oi
+ON o.order_id = oi.order_id
+GROUP BY DATE_TRUNC('month', o.order_date)
+ORDER BY MONTH DESC;
+
 --Find average order value.
+SELECT
+AVG(order_total) AS average_order
+FROM
+(
+    SELECT
+    o.order_id,
+    SUM(quantity * unit_price) AS order_total
+    FROM practice.orders o
+    JOIN practice.order_items oi
+    ON o.order_id = oi.order_id
+    WHERE o.status = 'completed'
+    GROUP BY o.order_id
+)order_total;
+
 --Rank products by total sales.
+SELECT
+    p.product_name,
+    SUM(oi.quantity * oi.unit_price) AS total_sales,
+    RANK() OVER(
+        ORDER BY SUM(oi.quantity * oi.unit_price) DESC
+    ) AS rank_sales
+FROM products p
+JOIN order_items oi
+    ON p.product_id = oi.product_id
+JOIN orders o
+    ON o.order_id = oi.order_id
+WHERE o.status = 'completed'
+GROUP BY p.product_name;
+
 --Show each customer’s most recent order date.
-
---Expert
---Find the total number of orders for each customer
---Find customers who made more than 1 order
---Show the most expensive product in each category
---Find products that have never been ordered
---Calculate the total quantity sold for each category
---Find the average product price by category
---Show all orders with the number of items in the order
---Find the customer who bought the largest total quantity of items
---Find orders whose total value is greater than the average order value
---Show cumulative revenue over time
-
---Bonus
---Find the second highest selling product
---Find customers who ordered from more than one category
---Find the percentage contribution of each category to total revenue
---Find the day with the highest sales
---Rank customers by total spending within each city
+SELECT
+    c.customer_id,
+    c.first_name,
+    c.last_name,
+    MAX(o.order_date) AS most_recent_order_date
+FROM customers c
+LEFT JOIN orders o
+    ON c.customer_id = o.customer_id
+GROUP BY c.customer_id,c.first_name,c.last_name
+ORDER BY most_recent_order_date DESC;
