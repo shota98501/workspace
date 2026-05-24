@@ -123,6 +123,14 @@ JOIN practice.orders o
 ON c.customer_id = o.order_id;
 
 --Find customers who have never placed an order.
+SELECT
+c.first_name,
+c.last_name,
+o.order_date
+FROM practice.customers c
+JOIN practice.orders o
+ON c.customer_id = o.order_id
+WHERE o.order_date IS NULL;
 
 --Advanced
 --Find the top 3 customers by total spending.
