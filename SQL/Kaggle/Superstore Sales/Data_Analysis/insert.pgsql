@@ -1,3 +1,4 @@
+
 INSERT INTO kaggle.customers
 SELECT DISTINCT
     customer_id,
