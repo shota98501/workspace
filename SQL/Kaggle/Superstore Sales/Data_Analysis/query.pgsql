@@ -18,12 +18,11 @@ SELECT
 count(customer_id) as total_customers
 from kaggle.customers;
 
-
 SELECT
-    DATE_TRUNC('month', o.order_date) AS month,
-    SUM(oi.sales) AS total_sales,
-    SUM(oi.profit) AS total_profit
-FROM orders o
-JOIN order_items oi
-    ON o.order_id = oi.order_id
-GROUP BY DATE_TRUNC('month', o.order_date);
+p.category,
+p.sub_category,
+SUM(oi.quantity * oi.sales) / oi.profit * 100 as profit_margin
+From kaggle.products p
+JOIN kaggle.order_items oi
+ON p.product_id = oi.product_id
+GROUP BY p.category,p.sub_category;
