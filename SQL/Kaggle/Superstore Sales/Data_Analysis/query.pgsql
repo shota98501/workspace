@@ -21,8 +21,13 @@ from kaggle.customers;
 SELECT
 p.category,
 p.sub_category,
-SUM(oi.quantity * oi.sales) / oi.profit * 100 as profit_margin
+ROUND(
+    SUM(oi.profit) * 100.0 / NULLIF(SUM(oi.sales),0),2
+    ) AS profit_margin
 From kaggle.products p
 JOIN kaggle.order_items oi
 ON p.product_id = oi.product_id
-GROUP BY p.category,p.sub_category;
+GROUP BY p.category,p.sub_category
+ORDER BY profit_margin DESC;
+
+select profit from kaggle.order_items; 
