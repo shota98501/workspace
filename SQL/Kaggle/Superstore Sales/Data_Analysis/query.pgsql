@@ -18,7 +18,7 @@ SELECT
 count(customer_id) as total_customers
 from kaggle.customers;
 
-----profit margin
+----Profit Margin
 SELECT
 p.category,
 p.sub_category,
@@ -31,7 +31,7 @@ ON p.product_id = oi.product_id
 GROUP BY p.category,p.sub_category
 ORDER BY profit_margin DESC;
 
---monthly revenue
+--Monthly Revenue
 SELECT
 date_trunc('month', o.order_date) as month,
 sum(oi.sales) as total_sales,
@@ -42,7 +42,7 @@ ON o.order_id = oi.order_id
 GROUP BY date_trunc('month', o.order_date)
 order by total_profit DESC;
 
---category performance
+--Category Performance
 SELECT
 p.category,
 p.sub_category,
@@ -54,7 +54,7 @@ on p.product_id = oi.product_id
 GROUP BY p.category,p.sub_category
 order by total_profit DESC;
 
---customer revenue
+--Customer Revenue
 SELECT
 c.customer_id,
 sum(oi.sales) as total_sales,
