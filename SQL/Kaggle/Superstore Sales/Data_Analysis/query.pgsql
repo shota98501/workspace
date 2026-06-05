@@ -42,18 +42,6 @@ ON o.order_id = oi.order_id
 GROUP BY date_trunc('month', o.order_date)
 order by total_profit DESC;
 
---Category Performance
-SELECT
-p.category,
-p.sub_category,
-sum(oi.sales) as total_sales,
-sum(oi.profit) as total_profit
-FROM kaggle.products p
-join kaggle.order_items oi
-on p.product_id = oi.product_id
-GROUP BY p.category,p.sub_category
-order by total_profit DESC;
-
 --Customer Revenue
 SELECT
 c.customer_id,
@@ -66,3 +54,51 @@ JOIN kaggle.order_items oi
 on o.order_id = oi.order_id
 GROUP BY c.customer_id
 order by total_profit desc;
+
+--Top 10 Products by Sales
+SELECT
+p.category,
+p.sub_category,
+SUM(oi.sales) AS total_sales
+FROM kaggle.products p
+JOIN kaggle.order_items oi
+ON p.product_id = oi.product_id
+GROUP BY p.category,p.sub_category
+ORDER BY total_sales DESC
+LIMIT 10;
+
+--Top 10 Products by Profit
+SELECT
+p.category,
+p.sub_category,
+SUM(oi.profit) AS total_profit
+FROM kaggle.products p
+JOIN kaggle.order_items oi
+ON p.product_id = oi.product_id
+GROUP BY p.category,p.sub_category
+ORDER BY total_profit DESC
+LIMIT 10;
+
+--Category Performance
+SELECT
+p.category,
+p.sub_category,
+sum(oi.sales) as total_sales,
+sum(oi.profit) as total_profit
+FROM kaggle.products p
+join kaggle.order_items oi
+on p.product_id = oi.product_id
+GROUP BY p.category,p.sub_category
+order by total_profit DESC;
+
+--Discount vs Profit
+SELECT
+p.category,
+p.sub_category,
+ROUND(AVG(oi.discount) * 100, 2) AS discount_sales,
+round(sum(oi.profit),2) as total_profit
+FROM kaggle.products p
+join kaggle.order_items oi
+on p.product_id = oi.product_id
+GROUP BY p.category,p.sub_category
+ORDER BY discount_sales DESC;
