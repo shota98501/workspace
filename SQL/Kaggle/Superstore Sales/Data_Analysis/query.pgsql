@@ -42,19 +42,6 @@ ON o.order_id = oi.order_id
 GROUP BY date_trunc('month', o.order_date)
 order by total_profit DESC;
 
---Customer Revenue
-SELECT
-c.customer_id,
-sum(oi.sales) as total_sales,
-sum(oi.profit) as total_profit
-FROM kaggle.customers c
-join kaggle.orders o
-on c.customer_id = o.customer_id
-JOIN kaggle.order_items oi
-on o.order_id = oi.order_id
-GROUP BY c.customer_id
-order by total_profit desc;
-
 --Top 10 Products by Sales
 SELECT
 p.category,
@@ -102,3 +89,51 @@ join kaggle.order_items oi
 on p.product_id = oi.product_id
 GROUP BY p.category,p.sub_category
 ORDER BY discount_sales DESC;
+
+--Customer Segments
+SELECT
+segment,
+count(customer_name) as customer_total
+from kaggle.customers
+GROUP BY segment
+ORDER BY customer_total DESC;
+
+--Customer Revenue
+SELECT
+c.customer_name,
+sum(oi.sales) as total_sales
+FROM kaggle.customers c
+join kaggle.orders o
+on c.customer_id = o.customer_id
+JOIN kaggle.order_items oi
+on o.order_id = oi.order_id
+GROUP BY c.customer_name
+order by total_sales desc
+limit 10;
+
+--Top Customers by Profit
+SELECT
+c.customer_name,
+sum(oi.profit) as total_profit
+FROM kaggle.customers c
+join kaggle.orders o
+on c.customer_id = o.customer_id
+JOIN kaggle.order_items oi
+on o.order_id = oi.order_id
+GROUP BY c.customer_name
+order by total_profit desc
+limit 10;
+
+--Sales by Customer Segment
+SELECT
+c.customer_name,
+c.segment,
+SUM(oi.sales) as total_sales,
+SUM(oi.profit) as total_profit
+FROM kaggle.customers c
+JOIN kaggle.orders o
+ON c.customer_id = o.customer_id
+JOIN kaggle.order_items oi
+ON o.order_id = oi.order_id
+GROUP BY c.customer_name,c.segment
+ORDER BY total_sales DESC , total_profit DESC;
