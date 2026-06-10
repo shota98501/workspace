@@ -1,3 +1,8 @@
+--Total Customer
+SELECT
+count(customer_id) as total_customer
+from kaggle.customers;
+
 --Customer First Purchase
 SELECT
 c.customer_id,
@@ -63,6 +68,8 @@ round(
 ) as retention_rate
 from customer_orders;
 
+
+
 --Customer Lifetime Value (CLV)
 SELECT
     c.customer_id,
@@ -75,6 +82,8 @@ JOIN kaggle.order_items oi
 ON o.order_id = oi.order_id
 GROUP BY c.customer_id,c.customer_name
 ORDER BY lifetime_value DESC;
+
+
 
 --Customer Segmentation
 SELECT
