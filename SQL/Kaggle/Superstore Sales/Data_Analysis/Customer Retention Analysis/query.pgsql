@@ -14,13 +14,11 @@ ON c.customer_id = oi.customer_id
 GROUP BY c.customer_id, c.customer_name;
 
 --Monthly Customer Activity
+CREATE VIEW customer_activity AS
 SELECT DISTINCT
-c.customer_id,
-c.customer_name,
-date_trunc('month', o.order_date) AS activity_month
-FROM kaggle.customers c
-JOIN kaggle.orders o
-ON c.customer_id = o.customer_id;
+    customer_id,
+    DATE_TRUNC('month', order_date) AS activity_month
+FROM kaggle.orders;
 
 --New Customers Per Month
 SELECT
@@ -139,3 +137,6 @@ GROUP BY
 ORDER BY
 fp.cohort_month,
 ca.activity_month;
+
+
+
