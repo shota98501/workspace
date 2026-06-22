@@ -1,11 +1,17 @@
+DROP TABLE project.gamesale_raw;
+
 CREATE TABLE project.gamesale_raw(
-rank INT,
+rank BIGINT,
 name VARCHAR(50),
 platform VARCHAR(50),
 year numeric(5,1),
 genre VARCHAR(50),
 publisher VARCHAR(50),
-jpsale numeric(4,2)
+jpsale numeric(4,2),
+nasale numeric(4,2),
+eusale numeric(4,2),
+othersale numeric(4,2),
+globalsale numeric(4,2)
 );
 
 CREATE TABLE project.products(
