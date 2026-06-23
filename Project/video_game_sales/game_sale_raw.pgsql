@@ -1,7 +1,7 @@
 DROP TABLE project.gamesale_raw;
 
 CREATE TABLE project.gamesale_raw(
-rank INT,
+rank INTEGER,
 name VARCHAR(500),
 platform VARCHAR(500),
 year numeric(5,1),

@@ -4977,7 +4977,7 @@ Rank,Name,Platform,Year,Genre,Publisher,NA_Sales,EU_Sales,JP_Sales,Other_Sales,G
 4977,Saints Row IV,PS4,2015,Action,Deep Silver,0.13,0.17,0.03,0.06,0.38
 4978,Evil Dead: Fistfull of Boomstick,PS2,2003,Action,THQ,0.19,0.15,0,0.05,0.38
 4979,One Piece: Unlimited World Red,3DS,2013,Action,Namco Bandai Games,0.05,0.04,0.28,0.01,0.38
-4980,Phantasy Star Ø,DS,2008,Role-Playing,Sega,0.16,0,0.2,0.01,0.38
+4980,Phantasy Star ÁEDS,2008,Role-Playing,Sega,0.16,0,0.2,0.01,0.38,0.38
 4981,Triple Play 97,PS,1996,Sports,Electronic Arts Victor,0.21,0.15,0,0.03,0.38
 4982,Virtua Tennis 2009,PS3,2009,Sports,Sega,0.09,0.23,0,0.07,0.38
 4983,Super Soccer,SNES,1991,Sports,Nintendo,0,0,0.38,0,0.38
@@ -8509,7 +8509,7 @@ Rank,Name,Platform,Year,Genre,Publisher,NA_Sales,EU_Sales,JP_Sales,Other_Sales,G
 8509,Doctor Lautrec and the Forgotten Knights,3DS,2011,Adventure,Konami Digital Entertainment,0.07,0.05,0.03,0.01,0.16
 8510,Disney's American Dragon Jake Long: Attack of the Dark Dragon,DS,2006,Action,Disney Interactive Studios,0.15,0,0,0.01,0.16
 8511,Godzilla Unleashed,Wii,2007,Fighting,Atari,0.15,0,0,0.01,0.16
-8512,Kamaitachi no Yoru × 3,PS2,2006,Adventure,Sega,0,0,0.16,0,0.16
+8512,Kamaitachi no Yoru ÁE3,PS2,2006,Adventure,Sega,0,0,0.16,0,0.16
 8513,Tom and Jerry: Infurnal Escape,GBA,2003,Action,Ubisoft,0.12,0.04,0,0,0.16
 8514,The Legend of Heroes VII: The Trail of Zero,PSP,2010,Role-Playing,Falcom Corporation,0,0,0.16,0,0.16
 8515,Warriors Orochi 3,X360,2011,Action,Ubisoft Annecy,0.09,0.03,0.03,0.01,0.16
@@ -11592,7 +11592,7 @@ Rank,Name,Platform,Year,Genre,Publisher,NA_Sales,EU_Sales,JP_Sales,Other_Sales,G
 11592,Minecraft: Story Mode,PC,2015,Adventure,Mojang,0.02,0.05,0,0.01,0.08
 11593,P.N.03 - Product Number Three,GC,2003,Shooter,Capcom,0.06,0.02,0,0,0.08
 11594,Samurai Warriors 2,X360,2006,Action,Tecmo Koei,0.07,0.01,0,0.01,0.08
-11595,Boku no Natsuyasumi 3: Hokkoku Hen: Chiisana Boku no Dai Sougen​,PS3,2007,Adventure,Sony Computer Entertainment,0,0,0.08,0,0.08
+11595,Boku no Natsuyasumi 3: Hokkoku Hen: Chiisana Boku no Dai Sougen EPS3,2007,Adventure,Sony Computer Entertainment,0,0,0.08,0,0.08,
 11596,Ape Escape: Pumped & Primed,PS2,2004,Misc,Sony Computer Entertainment,0.04,0.03,0,0.01,0.08
 11597,Alien Syndrome,PSP,2007,Role-Playing,Sega,0.07,0,0,0.01,0.08
 11598,Monster Trucks DS,DS,2005,Racing,Majesco Entertainment,0.07,0,0,0.01,0.08
