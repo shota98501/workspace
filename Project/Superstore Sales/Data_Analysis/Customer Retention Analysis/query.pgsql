@@ -52,5 +52,5 @@ SELECT
         COUNT(*),
         2
     ) AS retention_rate
-FROM customer_orders;
+FROM customer_orders;`
 
