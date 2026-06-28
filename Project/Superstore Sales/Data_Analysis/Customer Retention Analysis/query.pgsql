@@ -33,7 +33,6 @@ SELECT
     WHERE total_orders > 1;
 
 --Retention Rate
-
 WITH customer_orders AS(
     SELECT
         customer_id,
@@ -52,5 +51,70 @@ SELECT
         COUNT(*),
         2
     ) AS retention_rate
-FROM customer_orders;`
+FROM customer_orders;
 
+--Customer Lifetime Value (CLV)
+SELECT
+    c.customer_id,
+    c.customer_name,
+    SUM(oi.sales) AS lifetime_value
+FROM kaggle.customers c
+JOIN kaggle.orders o
+    ON c.customer_id = o.customer_id
+JOIN kaggle.order_items oi
+    ON o.order_id = oi.order_id
+GROUP BY
+    c.customer_id,
+    c.customer_name
+ORDER BY lifetime_value DESC;
+
+--Customer Segmentation
+SELECT
+    c.segment,
+    COUNT(DISTINCT c.customer_id) AS customers,
+    SUM(oi.sales) AS revenue,
+    SUM(oi.profit) AS profit
+FROM kaggle.customers c
+JOIN kaggle.orders o
+    ON c.customer_id = o.customer_id
+JOIN kaggle.order_items oi
+    ON o.order_id = oi.order_id
+GROUP BY c.segment;
+
+--Find Customer Cohort
+WITH first_purschase AS (
+    SELECT
+        customer_id,
+        date_trunc('month', MIN(order_date)) AS cohort_month
+    FROM kaggle.orders
+    GROUP BY customer_id
+)
+SELECT * FROM first_purschase;
+
+--Cohort Retention
+WITH first_purchase AS (
+    SELECT
+        customer_id,
+        DATE_TRUNC('month', MIN(order_date)) AS cohort_month
+    FROM kaggle.orders
+    GROUP BY customer_id
+),
+customer_activity AS (
+    SELECT
+        customer_id,
+        DATE_TRUNC('month', order_date) AS activity_month
+    FROM kaggle.orders
+)
+SELECT
+    fp.cohort_month,
+    ca.activity_month,
+    COUNT(DISTINCT ca.customer_id) AS active_customers
+FROM first_purchase fp
+JOIN customer_activity ca
+    ON fp.customer_id = ca.customer_id
+GROUP BY
+    fp.cohort_month,
+    ca.activity_month
+ORDER BY
+    fp.cohort_month,
+    ca.activity_month;
