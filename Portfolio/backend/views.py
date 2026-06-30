@@ -1,4 +1,4 @@
-from rest_frame.generics import RetrieveAPIView
+from rest_framework.generics import RetrieveAPIView
 from .models import Project
 from .serializers import ProjectSerializer
 
