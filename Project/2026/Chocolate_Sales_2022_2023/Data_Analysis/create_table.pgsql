@@ -1,7 +1,9 @@
 DROP TABLE kaggle.chocolatesale_raw;
-DROP TABLE kaggle.products CASCADE;
 DROP TABLE kaggle.order_items CASCADE;
+DROP TABLE kaggle.products CASCADE;
 DROP TABLE kaggle.orders CASCADE;
+DROP TABLE kaggle.Salesperson CASCADE;
+
 
 Create TABLE kaggle.chocolatesale_raw(
 Order_id VARCHAR(100),
@@ -26,21 +28,21 @@ CREATE TABLE kaggle.orders(
 );
 
 CREATE TABLE kaggle.products(
-    Product_id Serial PRIMARY KEY,
+    Product_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     Product VARCHAR(100)
 );
 
 CREATE TABLE kaggle.Salesperson(
-     Salesperson_id Serial PRIMARY KEY,
+     Salesperson_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
      Salesperson VARCHAR(100)
 );
 
 
 CREATE TABLE kaggle.order_items(
-    Order_item_id Serial PRIMARY KEY,
+    Order_item_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     Order_id VARCHAR(100),
-    Product_id Serial,
-    Salesperson_id Serial,
+    Product_id INT,
+    Salesperson_id INT,
     Discount_PCt NUMERIC(5,2),
     Price_per_Box NUMERIC(5,2),
     Marketing_Spend NUMERIC(5,2),
