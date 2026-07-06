@@ -1,8 +1,8 @@
 DROP TABLE kaggle.chocolatesale_raw;
-DROP TABLE kaggle.order_items CASCADE;
-DROP TABLE kaggle.products CASCADE;
 DROP TABLE kaggle.orders CASCADE;
+DROP TABLE kaggle.products CASCADE;
 DROP TABLE kaggle.Salesperson CASCADE;
+DROP TABLE kaggle.order_items CASCADE;
 
 
 Create TABLE kaggle.chocolatesale_raw(

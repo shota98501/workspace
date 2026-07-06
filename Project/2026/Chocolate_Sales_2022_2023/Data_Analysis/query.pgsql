@@ -1,6 +1,7 @@
-SELECT * FROM kaggle.products;
-
-SELECT * FROM kaggle.order_items
+SELECT * FROM kaggle.products LIMIT 10;
+SELECT * FROM kaggle.orders LIMIT 10;
+SELECT * FROM kaggle.order_items limit 10;
+SELECT * FROM kaggle.Salesperson LIMIT 10;
 
 --Top 10 products by revenue
 SELECT

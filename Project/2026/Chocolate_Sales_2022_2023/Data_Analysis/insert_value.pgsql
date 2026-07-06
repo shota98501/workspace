@@ -1,15 +1,15 @@
 INSERT INTO kaggle.products(Product)
-SELECT DISTINCT
+SELECT 
    Product
 FROM kaggle.chocolatesale_raw;
 
 INSERT INTO kaggle.Salesperson(Salesperson)
-SELECT DISTINCT
+SELECT 
    Salesperson
 FROM kaggle.chocolatesale_raw;
 
 INSERT INTO kaggle.orders
-SELECT DISTINCT
+SELECT 
     Order_id,
     Order_date,
     Country,
@@ -17,7 +17,7 @@ SELECT DISTINCT
 FROM kaggle.chocolatesale_raw;
 
 INSERT INTO kaggle.order_items(Discount_PCt, Price_per_Box, Marketing_Spend, Boxes_Shipped, Amount)
-SELECT
+SELECT 
    Discount_PCt,
    Price_per_Box,
    Marketing_Spend,
