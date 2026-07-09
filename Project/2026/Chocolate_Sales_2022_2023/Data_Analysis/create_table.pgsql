@@ -40,17 +40,14 @@ CREATE TABLE kaggle.Salesperson(
 
 CREATE TABLE kaggle.order_items(
     Order_item_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    Order_id VARCHAR(100),
-    Product_id INT,
-    Salesperson_id INT,
+    Order_id VARCHAR(100) REFERENCES kaggle.orders(Order_id) ON DELETE CASCADE,
+    Product_id INT REFERENCES kaggle.products(Product_id) ON DELETE CASCADE,
+    Salesperson_id INT REFERENCES kaggle.Salesperson(Salesperson_id) ON DELETE CASCADE,
     Discount_PCt NUMERIC(5,2),
     Price_per_Box NUMERIC(5,2),
     Marketing_Spend NUMERIC(5,2),
     Boxes_Shipped NUMERIC(5,2),
-    Amount NUMERIC(12,2),
-    FOREIGN KEY (Order_id) REFERENCES kaggle.orders(Order_id),
-    FOREIGN KEY (Product_id) REFERENCES kaggle.products(Product_id),
-    FOREIGN KEY (Salesperson_id) REFERENCES kaggle.Salesperson(Salesperson_id)
+    Amount NUMERIC(12,2)
 );
 
 
