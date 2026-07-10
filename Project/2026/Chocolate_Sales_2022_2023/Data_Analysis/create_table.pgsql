@@ -29,12 +29,12 @@ CREATE TABLE kaggle.orders(
 
 CREATE TABLE kaggle.products(
     Product_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    Product VARCHAR(100)
+    Product VARCHAR(100) UNIQUE
 );
 
 CREATE TABLE kaggle.Salesperson(
      Salesperson_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-     Salesperson VARCHAR(100)
+     Salesperson VARCHAR(100) UNIQUE
 );
 
 
