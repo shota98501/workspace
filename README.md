@@ -1,5 +1,3 @@
-DataScience Project
-| Project  |  |Resource link
-| ------------- | ------------- |
-|  Chocolate_Sales  | https://www.kaggle.com/code/shotasakuma/chocolate-sales  |
-| Content Cell  | Content Cell  |
+| 2026 | Project | Resource link |
+| --- | --- | --- |
+| 01 |  Chocolate_Sales | https://www.kaggle.com/code/shotasakuma/chocolate-sales|
