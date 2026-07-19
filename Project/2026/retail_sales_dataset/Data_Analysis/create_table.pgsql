@@ -7,8 +7,9 @@ DROP TABLE kaggle.order_items CASCADE;
 
 
 CREATE TABLE kaggle.retailsale_raw(
+    order_id INT,
     transaction_id INT,
-    order_date date,
+    order_date DATE,
     customer_id VARCHAR(100),
     gender VARCHAR(100),
     age INT,
