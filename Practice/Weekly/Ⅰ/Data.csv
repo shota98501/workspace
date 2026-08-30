@@ -1,0 +1,7 @@
+﻿customer_id,visit_date,rating,amount,member
+C001,2026/8/1,5,"""1,200""",Yes
+C002,2026/8/2,4,850,yes
+C003,03-08-2026,,unknown,No
+C003,03-08-2026,,unknown,No
+C004,invalid,6,950,N
+C005,2026/8/5,3,700,Y

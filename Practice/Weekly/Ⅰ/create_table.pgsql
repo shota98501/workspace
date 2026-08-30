@@ -1,8 +1,3 @@
-DROP TABLE practice.gamesale_raw CASCADE;
-DROP TABLE practice.products CASCADE;
-DROP TABLE practice.sales CASCADE;
-
-
 create table practice.orders(
     order_id INT,
     order_date DATE,
