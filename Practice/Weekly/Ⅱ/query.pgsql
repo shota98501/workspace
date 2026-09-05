@@ -13,6 +13,29 @@ select
 promised_date< delivered_date as late_delervies
 from practice.deliveries;
 
---late-delivery percentage
+--late-delivery percentage & total order value from late deliveries
+SELECT
+    region,
+    COUNT(*) AS total_deliveries,
 
---total order value from late deliveries 
+    COUNT(*) FILTER (
+        WHERE delivered_date > promised_date
+    ) AS late_deliveries,
+
+    ROUND(
+        COUNT(*) FILTER (
+            WHERE delivered_date > promised_date
+        ) * 100.0 / COUNT(*),
+        1
+    ) AS late_delivery_percentage,
+
+    COALESCE(
+        SUM(order_value) FILTER (
+            WHERE delivered_date > promised_date
+        ),
+        0
+    ) AS late_order_value
+
+FROM practice.deliveries
+GROUP BY region
+ORDER BY late_delivery_percentage DESC;
