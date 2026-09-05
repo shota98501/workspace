@@ -1,0 +1,8 @@
+﻿delivery_id,courier,delivery_minutes,status
+D101,Sato,35,Delivered
+D102,tanaka,62,delivered
+D103,SATO,eighty,Late
+D104,Tanaka,-5,Delivered
+D105,,48,LATE
+D105,,48,LATE
+D106,Suzuki,N/A,delivred
