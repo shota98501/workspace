@@ -1,0 +1,7 @@
+,delivery_id,courier,delivery_minutes,status
+0,D101,Sato,35.0,Delivered
+1,D102,Tanaka,62.0,Delivered
+2,D103,Sato,80.0,Late
+3,D104,Tanaka,5.0,Delivered
+4,D105,Unknown,48.0,Late
+6,D106,Suzuki,0.0,Delivered

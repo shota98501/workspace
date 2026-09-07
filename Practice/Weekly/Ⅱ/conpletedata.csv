@@ -1,0 +1,7 @@
+,delivery_id,courier,delivery_minutes,status,region,promised_date,delivered_date,order_value
+0,D101,Sato,35.0,Delivered,East,2026-08-20,2026-08-20,4200
+1,D102,Tanaka,62.0,Delivered,West,2026-08-20,2026-08-22,3100
+2,D103,Sato,80.0,Late,East,2026-08-21,2026-08-23,5600
+3,D104,Tanaka,5.0,Delivered,West,2026-08-22,2026-08-22,2800
+4,D105,Unknown,48.0,Late,East,2026-08-23,2026-08-24,3900
+5,D106,Suzuki,0.0,Delivered,North,2026-08-23,2026-08-23,4700
