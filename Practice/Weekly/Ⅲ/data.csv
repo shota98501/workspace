@@ -1,0 +1,7 @@
+﻿member_id,join_date,age,status,monthly_fee
+M101,2026/1/15,28,Active,"5,000"
+M102,15/02/2026,thirty, active ,8000
+M103,2026/3/10,41,ACTIVE,5000
+M104,invalid,35,cancelled,"8,000"
+M105,2026/5/1,-2,Active,5000
+M105,2026/5/1,-2,Active,5000
