@@ -1,0 +1,6 @@
+,member_id,visit_date,join_date,age,plan_type,status,monthly_fee
+0,M101,2026-09-02,2026-01-15,28.0,Basic,Active,5000
+1,M102,2026-09-08,2026-02-15,30.0,Premium,Active,8000
+2,M103,2026-08-20,2026-03-10,41.0,Basic,Active,5000
+3,M104,2026-09-05,,35.0,Premium,Cancelled,8000
+4,M105,2026-07-15,2026-05-01,,Basic,Active,5000

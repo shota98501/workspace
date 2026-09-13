@@ -1,6 +1,3 @@
-SELECT * from practice.members;
-SELECT * from practice.visits;
-
 --plan type
 SELECT member_id, plan_type from practice.members;
 
