@@ -1,0 +1,8 @@
+﻿ticket_id,satisfaction_score,contact_channel,issue_type
+T101,5,Email,Login
+T102,3,email ,Payment
+T103,N/A,CHAT,login
+T104,6,Phone,Delivery
+T105,two,chat, Payment
+T105,two,chat, Payment
+T106,,PHONE,Unknown
