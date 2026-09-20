@@ -1,0 +1,7 @@
+,ticket_id,agent_id,satisfaction_score,contact_channel,issue_type,opened_at,closed_at,priority
+0,T101,A01,5.0,Email,Login,2026-09-01 09:00:00,2026-09-01 13:00:00,High
+1,T102,A02,3.0,Email,Payment,2026-09-01 10:00:00,2026-09-02 10:00:00,Medium
+2,T103,A01,,Chat,Login,2026-09-02 08:00:00,,High
+3,T104,A03,,Phone,Delivery,2026-09-02 11:00:00,2026-09-02 14:00:00,Low
+4,T105,A02,2.0,Chat,Payment,2026-09-03 09:00:00,2026-09-03 15:00:00,High
+5,T106,A03,,Phone,Unknown,2026-09-03 12:00:00,,Medium
