@@ -46,15 +46,69 @@ where volume_rank <= 5
 order by ticker, volume_rank;
 
 --Question 5 Daily return
+WITH price_history AS (
+    SELECT
+        ticker,
+        trade_date,
+        close_price,
+
+        LAG(close_price) OVER (
+            PARTITION BY ticker
+            ORDER BY trade_date
+        ) AS previous_close
+
+    FROM stock_market.stock_prices
+)
+
 SELECT
     ticker,
     trade_date,
     close_price,
+    previous_close,
 
-    LAG(close_price) OVER (
-        PARTITION BY ticker
-        ORDER BY trade_date
-    ) AS previous_close
+    (close_price - previous_close)
+        / NULLIF(previous_close, 0) AS daily_return
 
-FROM stock_market.stock_prices
+FROM price_history
 ORDER BY ticker, trade_date;
+
+
+--Q6 Best and worst trading days
+with cte1 as (
+    SELECT
+    ticker,
+    trade_date,
+    close_price,
+
+    lag(close_price) over(
+        PARTITION BY ticker
+        order by trade_date
+    ) as previous_close
+
+    from stock_market.stock_prices
+),
+cte2 as (
+SELECT
+    ticker,
+    trade_date,
+    close_price,
+    previous_close,
+
+    (close_price - previous_close)
+        / NULLIF(previous_close, 0) AS daily_return
+    from stock_market.stock_prices
+),
+cte3 as(
+    SELECT
+    ticker,
+    trade_date,
+    daily_return,
+
+    row_number() over(
+        PARTITION by ticker
+        order by daily_return desc
+    ) as volume_rank
+
+    from stock_market.stock_prices
+)
+
