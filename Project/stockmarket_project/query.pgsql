@@ -7,6 +7,7 @@
  avg(close_price) as avg_close
  from stock_market.stock_prices
  GROUP by ticker;
+ 
 
 --Question 2 Highest and lowest closing price
  SELECT
@@ -16,6 +17,7 @@
  FROM stock_market.stock_prices
  GROUP BY ticker;
 
+
 --Question 3 Monthly trading performance
 SELECT
 date_trunc('month', trade_date) as month,
@@ -24,6 +26,7 @@ avg(close_price) as avg_close
 from stock_market.stock_prices
 GROUP BY month, ticker
 order by avg_close DESC;
+
 
 --Question 4 Highest-volume trading days
 with ranked_volume as (
@@ -44,6 +47,7 @@ SELECT *
 from ranked_volume
 where volume_rank <= 5
 order by ticker, volume_rank;
+
 
 --Question 5 Daily return
 WITH price_history AS (
@@ -74,7 +78,7 @@ ORDER BY ticker, trade_date;
 
 
 --Q6 Best and worst trading days
-with cte1 as (
+WITH cte1 as (
     SELECT
     ticker,
     trade_date,
@@ -87,6 +91,7 @@ with cte1 as (
 
     from stock_market.stock_prices
 ),
+
 cte2 as (
 SELECT
     ticker,
@@ -96,7 +101,8 @@ SELECT
 
     (close_price - previous_close)
         / NULLIF(previous_close, 0) AS daily_return
-    from stock_market.stock_prices
+
+    from cte1
 ),
 cte3 as(
     SELECT
@@ -107,8 +113,34 @@ cte3 as(
     row_number() over(
         PARTITION by ticker
         order by daily_return desc
-    ) as volume_rank
+    ) as best_rank,
 
-    from stock_market.stock_prices
+    row_number() over(
+        PARTITION by ticker
+        order by daily_return ASC
+    ) as worst_rank
+
+    from cte2
+    where daily_return is not null
 )
+SELECT *
+from cte3
+where best_rank = 1
+or worst_rank = 1
+order by ticker;
 
+
+--Question 7 30-day moving average
+SELECT
+    ticker,
+    trade_date,
+    close_price,
+
+    AVG(close_price) OVER (
+        PARTITION BY ticker
+        ORDER BY trade_date
+        ROWS BETWEEN 29 PRECEDING AND CURRENT ROW
+    ) AS moving_avg_30
+
+FROM stock_market.stock_prices
+ORDER BY ticker, trade_date;
