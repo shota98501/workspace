@@ -144,3 +144,45 @@ SELECT
 
 FROM stock_market.stock_prices
 ORDER BY ticker, trade_date;
+
+
+--Question 8 Biggest daily movers across the market
+with cte1 as (
+       SELECT
+       ticker,
+       trade_date,
+       close_price,
+
+       lag(close_price) over(
+            PARTITION by ticker
+            order by trade_date
+       ) as previous_close
+
+       from stock_market.stock_prices
+),
+cte2 as (
+    SELECT
+    ticker,
+    trade_date,
+    close_price,
+    previous_close,
+
+    (close_price - previous_close)
+        / NULLIF(previous_close, 0) as daily_return
+    
+    from cte1
+),
+cte3 as (
+    SELECT
+    ticker,
+    trade_date,
+    daily_return ,
+
+    ABS(daily_return) as absolute_return
+    from cte2
+    where daily_return is not null
+)
+SELECT *
+from cte3
+order by absolute_return desc
+limit 20;
