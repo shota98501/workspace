@@ -1,0 +1,7 @@
+﻿order_id,return_date,reason,refund_amount,approved
+O102,2026/9/10, wrong size ,"4,500",Yes
+O103,10/09/2026,DAMAGED,8000,yes
+O107,2026/9/12,damaged,"5,000",Y
+O108,invalid,Changed Mind,unknown,No
+O109,2026/9/14,,2500,N
+O109,2026/9/14,,2500,N
