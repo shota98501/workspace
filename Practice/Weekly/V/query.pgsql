@@ -20,7 +20,16 @@ from practice.orders;
 
 
 --gross revenue
-
-
+SELECT
+sum(order_amount) as gross_revenue
+from practice.orders;
 
 --retained revenue excluding returned orders
+SELECT
+COALESCE(
+sum(order_amount) FILTER(
+    WHERE returned = 'false'
+),
+0
+) as retained_revenue
+from practice.orders;
