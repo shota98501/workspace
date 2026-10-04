@@ -1,0 +1,7 @@
+﻿campaign_id,start_date,ad_spend,impressions,status
+C101,2026/9/1,"2,500",10000,Completed
+C102,01/09/2026,3200,"15,000", active
+C103,2026/9/5,unknown,8000,ACTIVE
+C104,invalid,1800,-500,planned
+C105,2026/9/10,2100,9000,Planned
+C105,2026/9/10,2100,9000,Planned
