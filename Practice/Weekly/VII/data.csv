@@ -1,0 +1,7 @@
+﻿product_id,supplier,delivery_date,units_received,unit_cost
+P101,North Supply,2026/10/1,20,"1,200"
+P102, north supply ,01/10/2026,50,300
+P103,East Goods,2026/10/2,ten,850
+P104,EAST GOODS,invalid,-5,1500
+P105,,2026/10/4,30,unknown
+P105,,2026/10/4,30,unknown
