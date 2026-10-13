@@ -1,0 +1,7 @@
+,product_id,supplier,delivery_date,units_received,unit_cost,data_issue,product_name,category,stock_quantity,sale_id,quantity
+0,P101,North supply,2026-10-01,20,1200.0,False,Laptop Stand,Office,12,S001,8.0
+1,P101,North supply,2026-10-01,20,1200.0,False,Laptop Stand,Office,12,S002,4.0
+2,P102,North supply,2026-01-10,50,300.0,False,USB Cable,Tech,40,S003,10.0
+3,P103,East goods,2026-10-02,10,850.0,False,Desk Lamp,Office,5,S004,15.0
+4,P104,East goods,,5,1500.0,True, Headphones,Tech,0,S005,6.0
+5,P105,,2026-10-04,30,,True,Water Bottle,Lifestyle,20,,
