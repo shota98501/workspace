@@ -1,0 +1,13 @@
+﻿customer_id,tenure_months,monthly_charge,support_tickets,contract,churned
+C101,24,"3,000",0,Annual,No
+C102,3,6000,5,monthly,Yes
+C103,18,3000,1,ANNUAL,No
+C104,6,"4,500",4, Monthly ,Yes
+C105,36,6000,0,Annual,No
+C106,twelve,4500,2,Monthly,No
+C107,-2,3000,6,monthly,Yes
+C108,8,unknown,3,Annual,Yes
+C109,30,4500,1,annual,No
+C110,2,6000,7,Monthly,Yes
+C110,2,6000,7,Monthly,Yes
+C111,15,3000,-1,Annual,No
