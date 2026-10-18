@@ -1,0 +1,5 @@
+customer_id,monthly_fee,status
+C101,3000,Active
+C102,6000,Cancelled
+C103,3000,Active
+C104,4500,Cancelled
