@@ -1,0 +1,12 @@
+,customer_id,tenure_months,monthly_charge,support_tickets,contract,churned,data_issue
+0,C101,24,3000.0,0,Annual,False,False
+1,C102,3,6000.0,5,Monthly,True,False
+2,C103,18,3000.0,1,Annual,False,False
+3,C104,6,4500.0,4,Monthly,True,False
+4,C105,36,6000.0,0,Annual,False,False
+5,C106,12,4500.0,2,Monthly,False,False
+6,C107,2,3000.0,6,Monthly,True,False
+7,C108,8,,3,Annual,True,True
+8,C109,30,4500.0,1,Annual,False,False
+9,C110,2,6000.0,7,Monthly,True,False
+11,C111,15,3000.0,-1,Annual,False,False
