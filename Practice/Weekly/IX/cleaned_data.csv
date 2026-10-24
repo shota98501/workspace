@@ -1,0 +1,12 @@
+,order_id,distance_km,item_count,peak_hour,weather,delivery_minutes,data_issue
+0,O101,3.2,2.0,False,Clear,32,False
+1,O102,5.5,4.0,True,Rain,48,False
+2,O103,2.0,1.0,False,Clear,25,False
+3,O104,6.1,3.0,True,Rain,42,False
+4,O105,4.0,2.0,False,Cloudy,38,False
+5,O106,8.0,5.0,True,Rain,61,False
+6,O107,,2.0,False,Clear,29,True
+7,O108,3.8,,True, cloudy ,40,True
+8,O109,7.2,4.0,True,Clear,55,False
+9,O110,1.5,1.0,False,Clear,20,False
+10,O111,5.0,3.0,True,Unknown,unknown,False
