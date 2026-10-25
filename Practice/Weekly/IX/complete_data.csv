@@ -1,6 +1,6 @@
-,order_id,distance_km,item_count,peak_hour,weather,delivery_minutes_x,data_issue,restaurant_id,restaurant_name,area,delivery_minutes_y,promised_minutes,revenue
-0,O101,3.2,2.0,False,Clear,32.0,False,R101,Sakura Kitchen,Shibuya,32,40,2400
-1,O102,5.5,4.0,True,Rain,48.0,False,R101,Sakura Kitchen,Shibuya,48,40,3100
-2,O103,2.0,1.0,False,Clear,25.0,False,R102,Green Bowl,Shinjuku,25,30,1000
-3,O104,6.1,3.0,True,Rain,42.0,False,R102,Green Bowl,Shinjuku,42,30,2600
-4,O105,4.0,2.0,False,Cloudy,38.0,False,R103,Tokyo Curry,Meguro,38,45,2200
+,order_id,distance_km,item_count,peak_hour,weather,delivery_minutes,data_issue,restaurant_id,restaurant_name,area,promised_minutes,revenue
+0,O101,3.2,2.0,False,Clear,32.0,False,R101,Sakura Kitchen,Shibuya,40,2400
+1,O102,5.5,4.0,True,Rain,48.0,False,R101,Sakura Kitchen,Shibuya,40,3100
+2,O103,2.0,1.0,False,Clear,25.0,False,R102,Green Bowl,Shinjuku,30,1000
+3,O104,6.1,3.0,True,Rain,42.0,False,R102,Green Bowl,Shinjuku,30,2600
+4,O105,4.0,2.0,False,Cloudy,38.0,False,R103,Tokyo Curry,Meguro,45,2200
