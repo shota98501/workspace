@@ -1,0 +1,13 @@
+﻿ride_id,distance_km,rider_type,weekend,weather,duration_minutes
+R001,4.2,Member,No,Clear,22
+R002,8.5,Casual,yes,Cloudy,45
+R003,3.1, member ,NO,clear,18
+R004,10.2,CASUAL,Yes,Rain,55
+R005,6,Member,no,Cloudy,30
+R006,twelve,Casual,Yes,Rain,64
+R007,-2,Member,No,Clear,20
+R008,7.5,,yes, cloudy ,41
+R009,9,Casual,Yes,Clear,48
+R010,2.5,Member,No,Clear,15
+R011,5,Casual,Yes,unknown,unknown
+R011,5,Casual,Yes,unknown,unknown
