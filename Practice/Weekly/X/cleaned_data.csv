@@ -1,0 +1,12 @@
+,ride_id,distance_km,rider_type,weekend,weather,duration_minutes
+0,R001,4.2,Member,False,Clear,22.0
+1,R002,8.5,Casual,True,Cloudy,45.0
+2,R003,3.1,Member,False,Clear,18.0
+3,R004,10.2,Casual,True,Rain,55.0
+4,R005,6.0,Member,False,Cloudy,30.0
+5,R006,12.0,Casual,True,Rain,64.0
+6,R007,0.0,Member,False,Clear,20.0
+7,R008,7.5,Unknown,True,Cloudy,41.0
+8,R009,9.0,Casual,True,Clear,48.0
+9,R010,2.5,Member,False,Clear,15.0
+10,R011,5.0,Casual,True,Unknown,0.0
