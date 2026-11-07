@@ -1,6 +1,11 @@
 SELECT * from practice.practice_orders
 LIMIT 10;
 
+SELECT 
+count(*)
+FROM practice.practice_orders
+LIMIT 10;
+
 --Net revenue
 SELECT
 sum(
